@@ -17,7 +17,7 @@ class KrsSeeder extends Seeder
         $mahasiswa = DB:: table('mahasiswa')->pluck('npm')->toArray();
         $matkul = DB::table('matakuliah')->pluck('kode_matakuliah')->toArray();
 
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 50; $i++) {
             DB::table('krs')->insert([
                 'npm' => $mahasiswa[array_rand($mahasiswa)],
                 'kode_matakuliah' => $matkul[array_rand($matkul)],

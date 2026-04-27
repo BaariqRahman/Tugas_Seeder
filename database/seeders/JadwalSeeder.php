@@ -17,7 +17,7 @@ class JadwalSeeder extends Seeder
         $matkul = DB::table('matakuliah')->pluck('kode_matakuliah')->toArray();
         $dosen = DB::table('dosen')->pluck('nidn')->toArray();
 
-        for ($i = 1; $i <= 10; $i++){
+        for ($i = 1; $i <= 50; $i++){
             DB::table('jadwal')->insert([
                 'kode_matakuliah' => $matkul[array_rand($matkul)],
                 'nidn' => $dosen[array_rand($dosen)],

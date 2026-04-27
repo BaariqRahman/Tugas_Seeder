@@ -16,12 +16,12 @@ class MahasiswaSeeder extends Seeder
         {
          $faker = Faker::create('id_ID');
 
-            for ($i = 1; $i <= 10; $i++) {
-            DB::table('mahasiswa')->insert([
-            'npm' => 'M' . str_pad($i, 3, '0', STR_PAD_LEFT),
-            'nidn' => 'D' . str_pad(rand(1,10), 3, '0', STR_PAD_LEFT),
-            'nama' => $faker->name,
-            ]);
+            for ($i = 1; $i <= 50; $i++) {
+                DB::table('mahasiswa')->insert([
+                'npm' => '55' . rand(200, 299) . rand(100, 999) . str_pad($i, 2, '0', STR_PAD_LEFT),
+                'nidn' => 'D' . str_pad(rand(1,50), 3, '0', STR_PAD_LEFT),
+                'nama' => $faker->name,
+             ]);
         }
     }
 }

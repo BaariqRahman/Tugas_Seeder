@@ -9,28 +9,37 @@ use Faker\Factory as Faker;
 
 class MatakuliahSeeder extends Seeder
 {
-    
     public function run(): void
     {
         $matkul = [
-            'Pemrograman Beriontasi Object',
-            'Pemrograman Dasar',
-            'Basis Data',
-            'Matematika Diskrit',
-            'Teori Bahasa Dan Otomata',
-            'Bahasa Inggris',
-            'Jaringan Komputer',
-            'Komunikasi Data',
-            'IT Governance',
-            'Rekayasa Perangkat Lunak'
-        ];
+        'Pemrograman Berorientasi Objek',
+        'Pemrograman Dasar',
+        'Basis Data',
+        'Matematika Diskrit',
+        'Struktur Data',
+        'Algoritma dan Pemrograman',
+        'Jaringan Komputer',
+        'Sistem Operasi',
+        'Rekayasa Perangkat Lunak',
+        'Kecerdasan Buatan',
+        'Data Mining',
+        'Cloud Computing',
+        'Keamanan Informasi',
+        'Pengolahan Citra',
+        'Pemrograman Web',
+        'Pemrograman Mobile',
+        'Big Data',
+        'Internet of Things',
+        'Manajemen Proyek IT',
+        'Statistika'
+    ];
 
-        foreach($matkul as $i => $nama){
-            DB::table('matakuliah')->insert([
-                'kode_matakuliah' => 'MK' . str_pad($i, 3, '0', STR_PAD_LEFT),
-                'nama_matakuliah' => $nama,
-                'sks' => rand(2, 4),
-            ]);
-        }
+    for ($i = 1; $i <= 50; $i++) {
+        DB::table('matakuliah')->insert([
+            'kode_matakuliah' => 'MK' . str_pad($i, 3, '0', STR_PAD_LEFT),
+            'nama_matakuliah' => $matkul[array_rand($matkul)],
+            'sks' => rand(2, 4),
+        ]);
     }
+}
 }

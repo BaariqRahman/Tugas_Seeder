@@ -14,7 +14,7 @@ class DosenSeeder extends Seeder
         {
             $faker = Faker::create('id_ID');
 
-            for ($i = 1; $i <= 10; $i++) {
+            for ($i = 1; $i <= 50; $i++) {
              DB::table('dosen')->insert([
             'nidn' => 'D' . str_pad($i, 3, '0', STR_PAD_LEFT),
             'nama' => $faker->name,
